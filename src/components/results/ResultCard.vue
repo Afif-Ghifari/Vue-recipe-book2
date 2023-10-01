@@ -6,12 +6,15 @@
                     <img class="card-img" alt="preview" :src="result.strMealThumb">
                 </div>
                 <div class="card-desc">
-                    <p class="tag">{{ result.strCategory }}</p>
-                    <h1 class="my-1">{{ result.strMeal}}</h1>
-                    <p class="my-1">Instructions: </p>
-                    <p class="my-1 text-justify">{{ result.strInstructions.substring(0, 100)+ '. . .' }}</p>
-
-                    <button class="btn-see-more" @click="toggleModal">Show More</button>
+                    <div class=" h-3/4">
+                        <p class="tag">{{ result.strCategory }}</p>
+                        <h1 class="my-1">{{ result.strMeal}}</h1>
+                        <p class="my-1">Instructions: </p>
+                        <p class="my-1 text-justify">{{ result.strInstructions.substring(0, 100)+ '. . .' }}</p>
+                    </div>
+                    <div class="h-1/4 px-2">
+                        <button class="btn-see-more" @click="toggleModal">Show More</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,22 +40,22 @@ const toggleModal = () => {
 <style lang="postcss" scoped>
 .card-container {
     @apply flex flex-col mx-auto min-h-[550px] my-2 border border-amber-100 max-w-xs md:max-w-[300px] lg:max-w-xs 
-    h-auto rounded-lg cursor-pointer shadow-xl hover:shadow-xl hover:shadow-amber-200
+    rounded-lg cursor-pointer shadow-xl hover:shadow-xl hover:shadow-amber-200
 }
 
 .card-body{
-    @apply bg-white h-full rounded-lg hover:drop-shadow-md
+    @apply bg-white border border-slate-200 h-full min-h-[550px] rounded-lg hover:drop-shadow-md
 }
 
 .card-img {
     @apply object-cover object-center w-full max-h-56 
 }
 .card-desc{
-    @apply flex flex-col px-2 sm:px-6 py-3 h-full
+    @apply flex flex-col justify-between px-2 sm:px-6 py-3 h-full min-h-[325px]
 }
 
 .btn-see-more {
-    @apply border-y border-amber-500 mb-6 mx-6 my-3 py-2 px-5 font-black transition hover:rounded-lg hover:bg-amber-500 hover:text-white hover:border-amber-500
+    @apply border-y border-amber-500 w-full mb-6 mx-auto my-3  py-2 px-5 font-black transition hover:rounded-lg hover:bg-amber-500 hover:text-white hover:border-amber-500
 }
 
 .tag {

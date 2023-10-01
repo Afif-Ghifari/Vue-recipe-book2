@@ -19,6 +19,9 @@
                     <p class="font-bold">Instructions:</p>
                     <p>{{ result.strInstructions }}</p>
                 </div>
+                <div class="close">
+                    <button @click="$emit('toggleModal')" class="close-btn">Close</button>
+                </div>
             </div>
         </div>
     </div>
@@ -56,7 +59,8 @@ export default {
 }
 
 .modal {
-    @apply flex lg:flex-row flex-col items-center bg-white w-3/4 lg:w-4/5 xl:w-2/3 h-[95%] lg:h-[90%] rounded-xl mx-auto my-7 overflow-auto
+    @apply flex lg:flex-row flex-col items-center bg-white w-11/12  lg:w-4/5 xl:w-2/3 h-[95%] lg:h-[90%] rounded-xl 
+    mx-auto my-7 overflow-auto
 }
 
 .modal-body {
@@ -67,6 +71,12 @@ export default {
 }
 .modal-body h1 {
     @apply font-black text-center md:text-left
+}
+.close{
+    @apply w-full
+}
+.close .close-btn{
+    @apply mx-auto py-2 w-full text-white hover:text-amber-500 border border-amber-500 bg-amber-500 hover:bg-transparent transition rounded-md
 }
 
 .img-recipe {
