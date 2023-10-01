@@ -15,7 +15,7 @@
 
 <style lang="postcss" scoped>
 .hero-base{
-    @apply bg-amber-500 h-[400px] md:h-[550px] flex flex-col md:flex-row p-14 justify-evenly items-center
+    @apply bg-amber-500 h-[400px] md:h-[550px] flex flex-col md:flex-row py-14 px-2 sm:px-14 justify-evenly items-center
 }
 
 .title{

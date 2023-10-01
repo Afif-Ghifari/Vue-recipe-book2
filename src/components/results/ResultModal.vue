@@ -5,17 +5,17 @@
                 <img class="img-recipe" :src="this.result.strMealThumb">
             </div>
             <div class="modal-body" id="desc">
-                <div class="my-2">
-                    <h1 class="font-black text-center md:text-left">{{ result.strMeal }}</h1>
+                <div>
+                    <h1>{{ result.strMeal }}</h1>
                     <p class="tag">{{ result.strCategory }}</p>
                 </div>
-                <div class="my-2">
+                <div>
                     <h2 class="font-bold">Ingredients: </h2>
                     <ul class="mx-5 list-disc" v-for="ingredient in ingredients" :key="ingredient">
                         <li>{{ ingredient }}</li>
                     </ul>
                 </div>
-                <div class="my-2">
+                <div>
                     <p class="font-bold">Instructions:</p>
                     <p>{{ result.strInstructions }}</p>
                 </div>
@@ -61,6 +61,12 @@ export default {
 
 .modal-body {
     @apply flex flex-col w-full h-full lg:w-1/2 p-5 md:p-10 overflow-y-scroll
+}
+.modal-body>div {
+    @apply my-2
+}
+.modal-body h1 {
+    @apply font-black text-center md:text-left
 }
 
 .img-recipe {

@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col items-center">
-        <div class="w-[90%] h-auto px-6 pt-12 mx-auto">
+    <div class="section-container">
+        <div class="load-content">
             <h1 v-if="isLoading">Loading recipes...</h1>
             <span v-if="noResultMessage == false">
                 <h1 v-if="resultMessage">{{ resultMessage }}</h1>
@@ -11,9 +11,9 @@
             <ResultCard v-for="result in results" :key="result.idMeal" :result="result"/>
         </div>
 
-        <div v-if="noResultMessage" class=" w-5/6 h-80 mb-5 px-6 md:px-0 lg:px-5 py-5 flex flex-col items-center justify-center">
+        <div v-if="noResultMessage" class="err-result">
             <i class="bi bi-exclamation-circle text-slate-300 text-[150px]"></i>
-            <h1 class="text-2xl md:text-4xl text-center text-slate-400" v-if="resultMessage">{{ resultMessage }}</h1>
+            <h1 class="err-msg" v-if="resultMessage">{{ resultMessage }}</h1>
         </div>
     </div>
 </template>
@@ -57,7 +57,21 @@ defineExpose({startSearch})
 </script>
 
 <style lang="postcss" scoped>
+.section-container{
+    @apply flex flex-col items-center
+}
+
+.load-content{
+    @apply w-[90%] h-auto px-6 pt-12 mx-auto
+}
+
 .cards-row{
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90%] max-h-[750px] px-6 md:px-0 lg:px-5 py-5
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90%] max-h-[750px] px-1 sm:px-6 md:px-0 lg:px-5 py-5
+}
+.err-result{
+    @apply w-5/6 h-80 mb-5 px-6 md:px-0 lg:px-5 py-5 flex flex-col items-center justify-center
+}
+.err-msg{
+    @apply text-2xl md:text-4xl text-center text-slate-400
 }
 </style>

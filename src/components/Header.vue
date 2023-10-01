@@ -6,7 +6,7 @@
                 <h3 class="text-4xl text-center md:text-2xl">RECIFOOD</h3>
             </div>
             <div class="">
-                <a href="https://github.com/Afif-Ghifari/Vue-recipe-book.git">
+                <a href="https://github.com/Afif-Ghifari/Vue-recipe-book2.git">
                     <i class="bi bi-github text-4xl"></i>
                 </a>
             </div>
@@ -22,6 +22,6 @@ export default {
 
 <style lang="postcss" scoped>
 nav{
-    @apply flex flex-row flex-wrap justify-between w-full h-20 px-12 items-center
+    @apply flex flex-row flex-wrap justify-between w-full h-20 px-2 sm:px-12 items-center
 }
 </style>

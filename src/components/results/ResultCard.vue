@@ -1,11 +1,11 @@
 <template>
     <div class="mx-2">
-        <div class="card-body">
-            <div class="overflow-hidden bg-white border rounded-lg hover:drop-shadow-md">
+        <div class="card-container">
+            <div class="card-body">
                 <div>
-                    <img class="img-card" alt="preview" :src="result.strMealThumb">
+                    <img class="card-img" alt="preview" :src="result.strMealThumb">
                 </div>
-                <div class="flex flex-col px-6 py-3">
+                <div class="card-desc">
                     <p class="tag">{{ result.strCategory }}</p>
                     <h1 class="my-1">{{ result.strMeal}}</h1>
                     <p class="my-1">Instructions: </p>
@@ -35,12 +35,20 @@ const toggleModal = () => {
 </script>
 
 <style lang="postcss" scoped>
-.card-body {
-    @apply flex flex-col mx-auto my-2 border border-amber-100 max-w-xs md:max-w-[300px] lg:max-w-xs h-auto rounded-lg cursor-pointer shadow-xl hover:shadow-xl hover:shadow-amber-200
+.card-container {
+    @apply flex flex-col mx-auto min-h-[550px] my-2 border border-amber-100 max-w-xs md:max-w-[300px] lg:max-w-xs 
+    h-auto rounded-lg cursor-pointer shadow-xl hover:shadow-xl hover:shadow-amber-200
 }
 
-.img-card {
-    @apply object-cover object-center w-full max-h-52
+.card-body{
+    @apply bg-white h-full rounded-lg hover:drop-shadow-md
+}
+
+.card-img {
+    @apply object-cover object-center w-full max-h-56 
+}
+.card-desc{
+    @apply flex flex-col px-2 sm:px-6 py-3 h-full
 }
 
 .btn-see-more {
